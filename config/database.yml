@@ -1,0 +1,29 @@
+development:
+  host: <%= ENV['DB_HOST'] || 'localhost' %>
+  adapter: mysql2
+  encoding: utf8mb4
+  charset: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password:
+  database: qryption_development
+
+test:
+  host: <%= ENV['DB_HOST'] || 'localhost' %>
+  adapter: mysql2
+  encoding: utf8mb4
+  charset: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password:
+  database: qryption_test
+
+production:
+  adapter: mysql2
+  encoding: utf8mb4
+  charset: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  socket: /tmp/mysql.sock
+  database: qryption_production
+  username: qryption
+  password: <%= ENV['QRYPTION_DATABASE_PASSWORD'] %>

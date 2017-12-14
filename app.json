@@ -1,0 +1,15 @@
+{
+  "name": "qryption",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+    "cleardb"
+  ],
+  "buildpacks": [
+
+  ]
+}
