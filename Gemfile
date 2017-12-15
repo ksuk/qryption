@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim-rails'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'jquery-rails'
+gem 'devise'
+gem 'omniauth-twitter'
 
 group :development, :test do
   gem 'rspec-rails'
