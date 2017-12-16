@@ -1,11 +1,32 @@
 .row
   .col-md-3
-    .card
-      .card-block
-        .card-title
-          | Sample Card Title
-        .card-text
-          | Sample Text
+    h1 人気の質問
+    ul.list-group
+      li.list-group-item
+        = link_to '#' do
+          span.badge.badge-success No.1
+          | &nbsp;
+          | Sample Question
+      li.list-group-item
+        = link_to '#' do
+          span.badge.badge-success No.2
+          | &nbsp;
+          | Sample Question
+      li.list-group-item
+        = link_to '#' do
+          span.badge.badge-success No.3
+          | &nbsp;
+          | Sample Question
+      li.list-group-item
+        = link_to '#' do
+          span.badge.badge-info No.4
+          | &nbsp;
+          | Sample Question
+      li.list-group-item
+        = link_to '#' do
+          span.badge.badge-info No.5
+          | &nbsp;
+          | Sample Question
   .col-md-6
     h1 ご注文はうさぎですか？
     p はい。
@@ -13,6 +34,6 @@
       = link_to "質問ページ", "#", class: "btn btn-secondary"
   .col-md-3
     - if current_user.present?
-      = link_to 'ログアウト', destroy_user_session_path, method: :delete
+      = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-danger'
     - else
-      = link_to 'ログイン', user_session_path
+      = link_to 'ログイン', user_session_path, class: 'btn btn-success'
