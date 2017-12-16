@@ -2,38 +2,18 @@
   .col-md-3
     h1 人気の質問
     ul.list-group
-      li.list-group-item
-        = link_to '#' do
-          span.badge.badge-success No.1
-          | &nbsp;
-          | Sample Question
-      li.list-group-item
-        = link_to '#' do
-          span.badge.badge-success No.2
-          | &nbsp;
-          | Sample Question
-      li.list-group-item
-        = link_to '#' do
-          span.badge.badge-success No.3
-          | &nbsp;
-          | Sample Question
-      li.list-group-item
-        = link_to '#' do
-          span.badge.badge-info No.4
-          | &nbsp;
-          | Sample Question
-      li.list-group-item
-        = link_to '#' do
-          span.badge.badge-info No.5
-          | &nbsp;
-          | Sample Question
+      - @questions_top_5.each_with_index do |question, i|
+        li.list-group-item
+          = link_to question_path(question) do
+            span.badge.badge-success No.#{i + 1}
+            | &nbsp;
+            = question.title
   .col-md-6
     p
       = link_to '質問する', new_question_path, class: "btn btn-secondary"
-    h1 ご注文はうさぎですか？
-    p はい。
+    - @questions.each do |question|
+      h1
+        = link_to question.title, question_path(question)
+      p = simple_format question.body
   .col-md-3
-    - if current_user.present?
-      = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-danger'
-    - else
-      = link_to 'ログイン', user_session_path, class: 'btn btn-success'
+    = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-danger'

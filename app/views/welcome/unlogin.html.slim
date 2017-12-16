@@ -1,0 +1,36 @@
+.row
+  .col-md-3
+    h1 人気の質問
+    ul.list-group
+      li.list-group-item
+        = link_to '#' do
+          span.badge.badge-success No.1
+          | &nbsp;
+          | Sample Question
+      li.list-group-item
+        = link_to '#' do
+          span.badge.badge-success No.2
+          | &nbsp;
+          | Sample Question
+      li.list-group-item
+        = link_to '#' do
+          span.badge.badge-success No.3
+          | &nbsp;
+          | Sample Question
+      li.list-group-item
+        = link_to '#' do
+          span.badge.badge-info No.4
+          | &nbsp;
+          | Sample Question
+      li.list-group-item
+        = link_to '#' do
+          span.badge.badge-info No.5
+          | &nbsp;
+          | Sample Question
+  .col-md-6
+    p
+      = link_to '質問する', new_question_path, class: "btn btn-secondary"
+    h1 ご注文はうさぎですか？
+    p はい。
+  .col-md-3
+    = link_to 'ログイン', user_session_path, class: 'btn btn-success'

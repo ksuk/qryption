@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :social_oauths, dependent: :destroy
   has_many :questions, dependent: :destroy
+  has_many :answers, dependent: :destroy
 
   def self.create_from_oauth(auth)
     user = User.new

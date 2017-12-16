@@ -1,0 +1,14 @@
+.col-md-12
+  h1
+    span.badge.badge-success 質問
+    | &nbsp;
+    = @question.title
+  p = simple_format @question.body
+  h1 回答を作成する
+  = simple_form_for @question.answers.build do |f|
+    = f.hidden_field :question_id, value: @question.id
+    = f.input :body
+    = f.button :submit
+  h1 回答一覧
+  - @answers.each do |answer|
+    p = simple_format answer.body
