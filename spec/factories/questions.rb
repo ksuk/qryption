@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :question do
-    references ""
+    title 'sample title'
+    body 'sample body'
   end
 end
