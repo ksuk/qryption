@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171216011539) do
+ActiveRecord::Schema.define(version: 20171216013437) do
 
   create_table "information", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.integer "status", default: 10, null: false
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20171216011539) do
     t.datetime "expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["provider", "uid"], name: "index_social_oauths_on_provider_and_uid", unique: true
     t.index ["provider"], name: "index_social_oauths_on_provider"
     t.index ["uid"], name: "index_social_oauths_on_uid"
     t.index ["user_id"], name: "index_social_oauths_on_user_id"
