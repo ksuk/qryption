@@ -19,6 +19,7 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'config'
 gem 'simple_form'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'rspec-rails'
