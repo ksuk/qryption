@@ -28,10 +28,10 @@
           | &nbsp;
           | Sample Question
   .col-md-6
+    p
+      = link_to '質問する', new_question_path, class: "btn btn-secondary"
     h1 ご注文はうさぎですか？
     p はい。
-    p
-      = link_to "質問ページ", "#", class: "btn btn-secondary"
   .col-md-3
     - if current_user.present?
       = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-danger'

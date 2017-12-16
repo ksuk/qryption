@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'config'
+gem 'simple_form'
 
 group :development, :test do
   gem 'rspec-rails'
