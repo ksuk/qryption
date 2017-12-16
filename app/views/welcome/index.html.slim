@@ -10,7 +10,10 @@
             = question.title
   .col-md-6
     p
-      = link_to '質問する', new_question_path, class: "btn btn-secondary"
+      = link_to new_question_path, class: "btn btn-secondary" do
+        span.fa.fa-star
+        | &nbsp;
+        | 質問する
     - @questions.each do |question|
       h1
         = link_to question.title, question_path(question)
