@@ -3,6 +3,7 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:twitter]
 
   has_many :social_oauths, dependent: :destroy
+  has_many :questions, dependent: :destroy
 
   def self.create_from_oauth(auth)
     user = User.new
