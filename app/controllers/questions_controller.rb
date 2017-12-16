@@ -1,5 +1,8 @@
 class QuestionsController < UserApplicationController
+  before_action :set_question, only: :show
+
   def show
+    @answers = @question.answers
   end
 
   def new
@@ -13,6 +16,12 @@ class QuestionsController < UserApplicationController
     else
       render :new
     end
+  end
+
+  private
+
+  def set_question
+    @question = Question.includes(:answers).find(params[:id])
   end
 
   def question_params
