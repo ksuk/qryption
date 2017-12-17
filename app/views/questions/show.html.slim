@@ -9,6 +9,8 @@
     = f.hidden_field :question_id, value: @question.id
     = f.input :body
     = f.button :submit
-  h1 回答一覧
+  h1
+    span.fa.fa-star
+    | 回答一覧
   - @answers.each do |answer|
     p = simple_format answer.body
