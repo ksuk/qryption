@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20171216030601) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
-  create_table "information", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+  create_table "information", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC" do |t|
     t.integer "status", default: 10, null: false
     t.string "title", null: false
     t.text "body", null: false
