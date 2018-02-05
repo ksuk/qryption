@@ -20,7 +20,7 @@ db/*.sqlite3
 dump.rdb
 
 # various artifacts
-**.war
+*.war
 *.rbc
 *.sassc
 .redcar/
@@ -50,7 +50,7 @@ pickle-email-*.html
 .zeus.sock
 
 # scm revert files
-**.orig
+*.orig
 
 # Mac finder artifacts
 .DS_Store
@@ -65,7 +65,7 @@ pickle-email-*.html
 /*.tmproj
 
 # vim artifacts
-**.swp
+*.swp
 
 # Environment files that may contain sensitive data
 .env
@@ -74,7 +74,7 @@ pickle-email-*.html
 /coverage/
 
 # /db/schema.rb
-**.iml
+*.iml
 
 config/settings.local.yml
 config/settings/*.local.yml
