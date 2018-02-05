@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: "welcome#index"
+  root to: 'questions#index'
+  resources :welcome, only: [:index]
   resources :questions, only: [:new, :create, :show]
   resources :answers, only: [:create]
   devise_for :users, controllers: {
