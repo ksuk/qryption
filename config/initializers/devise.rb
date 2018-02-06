@@ -14,4 +14,8 @@ Devise.setup do |config|
 
   # omniauth
   config.omniauth :twitter, Settings.oauth.twitter.consumer_key, Settings.oauth.twitter.consumer_secret
+
+  config.warden do |manager|
+    manager.failure_app = CustomFailure
+  end
 end
