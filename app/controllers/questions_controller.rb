@@ -1,5 +1,6 @@
 class QuestionsController < UserApplicationController
   before_action :set_question, only: :show
+  before_action :authenticate_user!, only: [:new, :create]
 
   def show
     @answers = @question.answers
