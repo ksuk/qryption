@@ -1,6 +1,10 @@
-.col-md-12
-  h1 質問を作成する
+.question-form.container-fluid
+  .question-form__header
+    = link_to '', class: 'times-icon' do
+      = fa_icon 'times'
+    .question-form__title 質問する
   = simple_form_for @question do |f|
-    = f.input :title
-    = f.input :body
-    = f.button :submit
+    .form-inputs
+      = f.input :body, label: false, placeholder: '質問を入力してください', required: false, input_html: { class: 'question-form__textarea' }
+    .form-actions
+      = f.button :submit, '送信', class: 'question-form__submit-btn'
