@@ -2,7 +2,7 @@
   .logo
     = image_tag 'logo.png'
   .twitter-login
-    = link_to '', class: 'twitter-login__btn' do
+    = link_to user_twitter_omniauth_authorize_path, class: 'twitter-login__btn' do
       = fa_icon 'twitter', text: 'Twitterで登録/ログイン'
   .email
     .email__login
