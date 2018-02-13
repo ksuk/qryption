@@ -17,7 +17,7 @@ RSpec.describe QuestionsController, type: :controller do
   end
 
   describe '.create' do
-    subject { get :create, params: { question: { title: 'hoge', body: 'piyo' } } }
+    subject { get :create, params: { question: { body: 'piyo' } } }
     it { expect(response).to have_http_status(:ok) }
     it { expect { subject }.to change { Question.count } }
   end
