@@ -30,7 +30,5 @@ module Qryption
         request_specs: false
       g.fixture_replacement :factory_bot, dir: "spec/factories"
     end
-
-    config.autoload_paths += %W(#{config.root}/lib)
   end
 end

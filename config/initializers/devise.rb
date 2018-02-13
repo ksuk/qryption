@@ -13,9 +13,5 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   # omniauth
-  config.omniauth :twitter, Settings.oauth.twitter.consumer_key, Settings.oauth.twitter.consumer_secret
-
-  config.warden do |manager|
-    manager.failure_app = CustomFailure
-  end
+	config.omniauth :twitter, ENV['TWITTER_API_KEY'], ENV['TWITTER_API_SECRET']
 end
