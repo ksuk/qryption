@@ -1,0 +1,11 @@
+.registration.container-fluid
+  .registration__wrapper
+    h2.registration__title メールアドレスで登録
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :email, label: false, placeholder: 'メールアドレス',  required: true, autofocus: true
+        = f.input :password, label: false, placeholder: 'パスワード', required: true
+        = f.input :password_confirmation, label: false, placeholder: 'パスワードの確認', required: true
+      .form-actions
+        = f.button :submit, '登録する', class: 'registration__submit-btn'
