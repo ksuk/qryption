@@ -1,6 +1,6 @@
 .question-form.container-fluid
   .question-form__header
-    = link_to '', class: 'times-icon' do
+    = link_to root_path, class: 'times-icon' do
       = fa_icon 'times'
     .question-form__title 質問する
   = simple_form_for @question do |f|

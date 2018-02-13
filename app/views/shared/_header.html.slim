@@ -1,6 +1,6 @@
 .header.container-fluid
   .left-content
-    .header__logo Qryption
+    = link_to 'Qryption', root_path, class: 'header__logo'
   - if user_signed_in?
     .right-content
       = link_to '質問する！', new_question_path, class: 'header__new-question-btn'
