@@ -10,7 +10,7 @@ SimpleForm.setup do |config|
     b.optional :readonly
     b.use :label_input
     b.use :hint,  wrap_with: { tag: :span, class: :hint }
-    b.use :error, wrap_with: { tag: :span, class: :error }
+    b.use :full_error, wrap_with: { tag: :span, class: :error }
   end
   config.default_wrapper = :default
   config.boolean_style = :nested
