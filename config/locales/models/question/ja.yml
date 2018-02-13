@@ -1,0 +1,8 @@
+---
+ja:
+  activerecord:
+    models:
+      question: 質問
+    attributes:
+      question:
+        body: 質問
