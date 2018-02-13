@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   resources :answers, only: [:create]
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
-    registration: 'sign_up',
   }, controllers: {
-    omniauth_callbacks: "omniauth_callbacks"
+    omniauth_callbacks: 'omniauth_callbacks'
   }
 end
