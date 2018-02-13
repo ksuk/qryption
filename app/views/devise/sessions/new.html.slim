@@ -1,10 +1,11 @@
-h2
-  | Log in
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .form-inputs
-    = f.input :email, required: false, autofocus: true
-    = f.input :password, required: false
-    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-  .form-actions
-    = f.button :submit, "Log in"
-= render "devise/shared/links"
+.session.container-fluid
+  .session__wrapper
+    h2.session__title メールアドレスでログイン
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :email, label: false, placeholder: 'メールアドレス', required: false, autofocus: true
+        = f.input :password, label: false, placeholde: 'パスワード', required: false
+        = f.input :remember_me, label: 'ログインを記録する',  as: :boolean if devise_mapping.rememberable?
+      .form-actions
+        = f.button :submit, 'ログイン', class: 'session__submit-btn'
