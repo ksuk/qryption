@@ -1,0 +1,49 @@
+.question-form {
+  height: 100%;
+  margin-top: 40px;
+  padding: 0;
+
+  &__header {
+    border-top: 1px solid #ced4da;
+    border-right: 1px solid #ced4da;
+    border-left: 1px solid #ced4da;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 15px;
+  }
+
+  .times-icon {
+    color: $lightGray;
+    position: absolute;
+    left: 15px;
+  }
+
+  &__title {
+    font-size: 14px;
+  }
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  &__textarea {
+    border-radius: 0;
+    height: 150px;
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+
+  &__submit-btn {
+    background-color: #D9D9D9;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: $btnFontSize;
+    width: 60px;
+  }
+}
