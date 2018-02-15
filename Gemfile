@@ -22,6 +22,7 @@ gem 'config'
 gem 'dotenv-rails'
 gem 'simple_form'
 gem 'font-awesome-rails'
+gem 'kaminari'
 
 group :development, :test do
   gem 'rspec-rails'
