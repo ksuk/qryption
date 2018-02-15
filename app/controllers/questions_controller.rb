@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
+    @questions = Question.order(created_at: :desc)
   end
 
   def show
