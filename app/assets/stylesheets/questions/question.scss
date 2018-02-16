@@ -13,6 +13,7 @@
     border-top-left-radius: 3px;
     box-sizing: border-box;
     display: inline-block;
+    font-size: 12px;
     margin-left: 10px;
     padding: 10px;
     position: relative;
@@ -40,6 +41,10 @@
       margin-top: -10px;
       z-index: 1;
     }
+
+    .omission {
+      font-size: 10px;
+    }
   }
 
   &__answer {
@@ -48,6 +53,7 @@
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
     border-left: 1px solid $lightGray;
+    display: block;
     font-size: 10px;
     margin-left: 10px;
     margin-bottom: 10px;
