@@ -22,6 +22,7 @@ gem 'config'
 gem 'dotenv-rails'
 gem 'simple_form'
 gem 'font-awesome-rails'
+gem 'kaminari'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -47,6 +48,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'html2slim'
+  gem 'bullet'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
