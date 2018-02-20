@@ -23,6 +23,7 @@ gem 'dotenv-rails'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'kaminari'
+gem 'therubyracer', platforms: :ruby
 
 group :development, :test do
   gem 'rspec-rails'
