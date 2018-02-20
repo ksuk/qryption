@@ -1,10 +1,16 @@
 .question {
-  box-sizing: border-box;
   display: flex;
+  margin-bottom: 42px;
 
-  &__user-img {
-    border-radius: 3px;
-    width: 100%;
+  &__user {
+    height: 60px;
+    width: 60px;
+
+    &__img {
+      border-radius: 3px;
+      height: 60px;
+      width: 60px;
+    }
   }
 
   &__baloon {
@@ -13,11 +19,10 @@
     border-top-left-radius: 3px;
     box-sizing: border-box;
     display: inline-block;
-    font-size: 12px;
+    font-size: 24px;
     margin-left: 10px;
-    padding: 10px;
     position: relative;
-    width: calc(100% - 7px);
+    width: calc(100% - 70px);
     word-wrap: break-word;
 
     &::before {
@@ -42,22 +47,15 @@
       z-index: 1;
     }
 
-    .omission {
-      font-size: 10px;
+    &__text {
+      display: block;
+      margin: 16px;
     }
-  }
 
-  &__answer {
-    border-right: 1px solid $lightGray;
-    border-bottom: 1px solid $lightGray;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-    border-left: 1px solid $lightGray;
-    display: block;
-    font-size: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    padding: 5px 8px;
-    width: calc(100% - 7px);
+    &__answer {
+      border-top: 1px solid $lightGray;
+      display: block;
+      padding: 16px;
+    }
   }
 }
