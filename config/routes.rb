@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'questions#index'
   resources :top, only: :index
+  resources :users, only: [:show, :edit, :update]
   resources :questions, only: [:new, :create, :show]
   resources :answers, only: [:create]
   devise_for :users, path: '', path_names: {
