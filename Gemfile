@@ -24,6 +24,7 @@ gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'kaminari'
 gem 'therubyracer', platforms: :ruby
+gem 'mini_magick'
 gem 'carrierwave', '~> 1.0'
 
 group :development, :test do
