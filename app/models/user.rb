@@ -2,6 +2,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: %i[twitter]
 
+  mount_uploader :avatar, ImageUploader
+
   has_many :social_oauths, dependent: :destroy
   has_many :questions, dependent: :destroy
   has_many :answers, dependent: :destroy
