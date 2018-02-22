@@ -4,11 +4,11 @@
   - if user_signed_in?
     .right-content
       = link_to '質問する！', new_question_path, class: 'header__new-question-btn'
-      = image_tag 'https://avatars1.githubusercontent.com/u/7753180?s=400&u=8d4e34b0fb480e9e4d0b8b017736753706f5e076&v=4', class: 'header__icon dropdown-toggle', 'data-toggle': 'dropdown'
+      = image_tag "#{current_user.image.url if current_user.image.present?}", class: 'header__icon dropdown-toggle', 'data-toggle': 'dropdown'
       .dropdown-menu.dropdown-menu-right
-        = link_to 'マイページ', '', class: 'dropdown-item'
+        = link_to 'マイページ', user_path(current_user), class: 'dropdown-item'
         .dropdown-divider
-        = link_to 'プロフィール編集', '', class: 'dropdown-item'
+        = link_to 'プロフィール編集', edit_user_path(current_user), class: 'dropdown-item'
         .dropdown-divider
         = link_to 'オプション', '', class: 'dropdown-item'
         .dropdown-divider
