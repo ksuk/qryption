@@ -11,6 +11,10 @@ a {
   }
 }
 
+img {
+  object-fit: cover;
+}
+
 // bootstrapを上書き
 .help-block {
   color: #a94442;
