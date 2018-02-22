@@ -2,9 +2,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: %i[twitter]
 
+  mount_uploader :image, ImageUploader
+
   has_many :social_oauths, dependent: :destroy
   has_many :questions, dependent: :destroy
   has_many :answers, dependent: :destroy
+
+  validates :name, presence: true, on: :update
+  validates :email, presence: true, on: :update
 
   def self.create_from_oauth(auth)
     user = User.new
@@ -12,6 +17,9 @@ class User < ApplicationRecord
     social_oauth.build_from_oauth(auth)
     user.email = "#{auth['uid']}@#{auth['provider']}.com"
     user.password = SecureRandom.urlsafe_base64
+    user.remote_image_url = auth.info.image
+    user.name = auth.info.name
+    user.website = auth.info.urls.Website if auth.info.urls.Website.present?
     user.save!
     user
   end

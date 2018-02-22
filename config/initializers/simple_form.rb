@@ -19,4 +19,5 @@ SimpleForm.setup do |config|
   config.error_notification_class = 'error_notification'
   config.browser_validations = false
   config.boolean_label_class = 'checkbox'
+  config.label_text = lambda { |label, required, explicit_label| "#{label} #{required}" }
 end

@@ -1,0 +1,35 @@
+.container-fluid
+  .user-form
+    = simple_form_for current_user do |f|
+      .user-form__actions
+        = link_to 'キャンセル', root_path, class: 'user-form__actions__cancel'
+        = f.button :submit, class: 'user-form__actions__submit'
+      .user-form__image-group.form-group
+        = f.label :image, class: 'user-form__image-group__label' do
+          - if current_user.image.present?
+            = image_tag current_user.image.url, class: 'user-form__image-group__image', id: 'js-user-image'
+          - else
+            = image_tag 'camera.svg', class: 'user-form__image-group__no-image', id: 'js-user-image'
+        = f.input :image, as: :file, label: false,
+          input_html: { class: 'user-form__image-group__input' }
+        span 写真を変更
+      = f.input :name, required: true,
+        input_html: { class: 'user-form__input' }
+      = f.input :profile,
+        input_html: { class: 'user-form__textarea' }
+      = f.input :website,
+        input_html: { class: 'user-form__input' }
+      = f.input :email, required: true,
+        input_html: { class: 'user-form__input' }
+
+javascript:
+  var $input = document.getElementById('user_image');
+  $input.addEventListener('change', function(){
+    var fileList = $input.files;
+    var reader = new FileReader();
+    reader.readAsDataURL(fileList[0]);
+
+    reader.addEventListener('load', function(){
+      document.getElementById('js-user-image').src = reader.result;
+    }, false);
+  }, false);

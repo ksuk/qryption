@@ -1,0 +1,46 @@
+.user-detail {
+  margin-top: 1.5rem;
+  border: 1px solid $lightGray;
+  border-radius: .5rem;
+  padding: 2.6rem;
+
+  &__top, &__middle {
+    display: flex;
+    margin-bottom: 3rem;
+  }
+
+  &__image {
+    border: 1px solid $lightGray;
+    border-radius: 0.5rem;
+    height: 8rem;
+    margin-right: 1rem;
+    width: 8rem;
+  }
+
+  &__name {
+    font-size: 2.5rem;
+  }
+
+  &__oauth {
+    border: 1px solid $lightGray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    height: 5rem;
+    width: 5rem;
+
+    .twitter {
+      color: $twitterBlue;
+    }
+  }
+
+  &__profile {
+    font-size: 2rem;
+  }
+
+  &__website {
+    font-size: 2rem;
+  }
+}
