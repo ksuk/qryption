@@ -1,10 +1,11 @@
+- image = current_user.image.present? ? current_user.image.url : 'no-image-user.svg'
 .header.container-fluid
   .left-content
     = link_to 'Qryption', root_path, class: 'header__logo'
   - if user_signed_in?
     .right-content
       = link_to '質問する！', new_question_path, class: 'header__new-question-btn'
-      = image_tag "#{current_user.image.url if current_user.image.present?}", class: 'header__icon dropdown-toggle', 'data-toggle': 'dropdown'
+      = image_tag image, class: 'header__icon dropdown-toggle', 'data-toggle': 'dropdown'
       .dropdown-menu.dropdown-menu-right
         = link_to 'マイページ', user_path(current_user), class: 'dropdown-item'
         .dropdown-divider
