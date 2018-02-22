@@ -17,7 +17,7 @@
 
   &__new-question-btn {
     background-color: white;
-    border-radius: 3px;
+    border-radius: .5rem;
     box-sizing: border-box;
     color: $mainColor;
     display: flex;
@@ -31,8 +31,8 @@
   }
 
   &__icon {
-    background-color: rgb(151, 151, 151);
-    border-radius: 3px;
+    background-color: white;
+    border-radius: .5rem;
     height: 4.5rem;
     margin-right: 4rem;
     width: 4.5rem;
