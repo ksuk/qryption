@@ -1,0 +1,19 @@
+- image = @user.image.present? ? @user.image.url : 'no-image-user.svg'
+.container-fluid
+  .user-detail
+    .user-detail__top
+      = image_tag image, class: 'user-detail__image'
+      .user-detail__name
+        = @user.name.present? ? current_user.name : 'このユーザーは名前が未設定です'
+    - if @user.social_oauths.present?
+      .user-detail__middle
+        - @user.social_oauths.each do |oauth|
+          - case oauth.provider
+          - when 'twitter'
+            .user-detail__oauth
+              = fa_icon 'twitter', class: 'twitter'
+    .user-detail__bottom
+      .user-detail__profile
+        = simple_format(@user.profile) if @user.profile.present?
+      .user-detail__website
+        = link_to @user.website if @user.website.present?
