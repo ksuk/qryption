@@ -1,0 +1,6 @@
+ja:
+  simple_form:
+    "yes": 'はい'
+    "no": 'いいえ'
+    required:
+      html: '<span class="simple_form__required bg-danger text-white">必須</span>'
