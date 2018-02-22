@@ -1,8 +1,8 @@
-- image = current_user.image.present? ? current_user.image.url : 'no-image-user.svg'
 .header.container-fluid
   .left-content
     = link_to 'Qryption', root_path, class: 'header__logo'
   - if user_signed_in?
+    - image = current_user.image.present? ? current_user.image.url : 'no-image-user.svg'
     .right-content
       = link_to '質問する！', new_question_path, class: 'header__new-question-btn'
       = image_tag image, class: 'header__icon dropdown-toggle', 'data-toggle': 'dropdown'
