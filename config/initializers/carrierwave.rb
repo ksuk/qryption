@@ -1,4 +1,5 @@
 CarrierWave.configure do |config|
+  if Rails.env == 'production'
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       provider: 'AWS',
@@ -11,4 +12,5 @@ CarrierWave.configure do |config|
     config.fog_directory  = 's3-for-qryption/qryption'
     config.fog_public = false
     config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
+  end
 end
