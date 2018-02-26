@@ -13,6 +13,13 @@ class User < ApplicationRecord
     update.validates :email, presence: true
   end
 
+  with_options on: :update_password do |update_password|
+    update_password.validates :current_password, presence: true
+    update_password.validates :password, presence: true
+    update_password.validates :password_confirmation, presence: true
+  end
+
+
   def self.create_from_oauth(auth)
     user = User.new
     social_oauth = user.social_oauths.build

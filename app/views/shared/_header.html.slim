@@ -11,6 +11,6 @@
         .dropdown-divider
         = link_to 'プロフィール編集', edit_user_path(current_user), class: 'dropdown-item'
         .dropdown-divider
-        = link_to 'パスワード設定', '', class: 'dropdown-item'
+        = link_to 'パスワード設定', edit_password_user_path(current_user), class: 'dropdown-item'
         .dropdown-divider
         = link_to 'ログアウト', destroy_user_session_path, class: 'dropdown-item', method: :delete
