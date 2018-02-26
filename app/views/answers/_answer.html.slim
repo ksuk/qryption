@@ -1,0 +1,11 @@
+  .answer.row.no-gutters
+    .answer__left-wrapper
+      .answer__user-name
+        = answer.user.name
+      .answer__baloon
+        .answer__baloon__text
+          = simple_format(answer.body)
+    .answer__user
+      - image = answer.user.image.present? ? answer.user.image.url : 'no-image-user.svg'
+      = link_to user_path(answer.user) do
+        = image_tag image, class: 'answer__user__img'

@@ -1,5 +1,4 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: :show
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
@@ -7,7 +6,10 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @answers = @question.answers
+    @question = Question.find(params[:id])
+    @answers = @question.answers.includes(:user)
+    rescue
+      redirect_to root_path, warning: '申し訳ございません。お探しの質問は見つかりませんでした。'
   end
 
   def new
@@ -24,10 +26,6 @@ class QuestionsController < ApplicationController
   end
 
   private
-
-  def set_question
-    @question = Question.includes(:answers).find(params[:id])
-  end
 
   def question_params
     params.require(:question).permit(:body)
