@@ -8,7 +8,7 @@ RSpec.describe AnswersController, type: :controller do
   before { sign_in user }
 
   describe '.create' do
-    subject { get :create, params: { answer: { body: 'piyo', question_id: question.id } } }
+    subject { post :create, params: { answer: { body: 'piyo'}, question_id: question.id } }
     it { expect(response).to have_http_status(:ok) }
     it { expect { subject }.to change { Answer.count } }
   end
