@@ -5,5 +5,5 @@
   .question__baloon
     = link_to question_path(question), class: 'question__baloon__text' do
       = simple_format(h(truncate(question.body, length: 200, omission: ' ...続きを読む')))
-    = link_to '#', class: 'question__baloon__answer' do
+    = link_to new_question_answer_path(question), class: 'question__baloon__answer' do
       = fa_icon 'edit', text: '回答する'
