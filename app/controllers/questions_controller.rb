@@ -17,7 +17,7 @@ class QuestionsController < ApplicationController
   def create
     @question = current_user.questions.build(question_params)
     if @question.save
-      redirect_to question_path(@question)
+      redirect_to question_path(@question), success: '質問を投稿しました。'
     else
       render :new
     end

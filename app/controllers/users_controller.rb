@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     redirect_to root_path, alert: 'ご自身のアカウントのみ編集ができます。' unless current_user == @user
     if @user.update(user_params)
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user), success: 'ユーザー情報を更新しました。'
     else
       render :edit
     end
