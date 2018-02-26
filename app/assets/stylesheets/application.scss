@@ -5,6 +5,7 @@
 @import "top";
 @import "devise/registration";
 @import "devise/session";
+@import "shared/flash_messages";
 @import "shared/header";
 @import "questions/index";
 @import "questions/question";

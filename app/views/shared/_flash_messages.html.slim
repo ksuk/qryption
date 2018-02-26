@@ -1,0 +1,4 @@
+- if flash.present?
+  .flash-messages
+    - flash.each do |key, message|
+      = content_tag(:div, message, class: 'alert alert-warning')
