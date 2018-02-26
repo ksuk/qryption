@@ -8,6 +8,4 @@ html
     == javascript_include_tag 'application'
 
   body
-    - if flash.present?
-      = render 'shared/flash_messages'
     == yield
