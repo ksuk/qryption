@@ -32,6 +32,11 @@ javascript:
     reader.readAsDataURL(fileList[0]);
 
     reader.addEventListener('load', function(){
-      document.getElementById('js-user-image').src = reader.result;
+      $image = document.getElementById('js-user-image');
+      if($image.classList.contains('user-form__image-group__no-image')) {
+        $image.classList.remove('user-form__image-group__no-image');
+        $image.classList.add('user-form__image-group__image');
+      }
+      $image.src = reader.result;
     }, false);
   }, false);

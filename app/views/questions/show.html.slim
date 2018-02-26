@@ -1,15 +1,12 @@
-.col-md-12
-  h1
-    span.badge.badge-success 質問
-    | &nbsp;
-  p = simple_format @question.body
-  h1 回答を作成する
-  = simple_form_for @question.answers.build do |f|
-    = f.hidden_field :question_id, value: @question.id
-    = f.input :body
-    = f.button :submit
-  h1
-    span.fa.fa-star
-    | 回答一覧
-  - @answers.each do |answer|
-    p = simple_format answer.body
+.container-fluid
+  .question.row.no-gutters
+    .question__user
+      - image = @question.user.image.present? ? @question.user.image.url : 'no-image-user.svg'
+      = link_to user_path(@question.user) do
+        = image_tag image, class: 'question__user__img'
+    .question__baloon
+      .question__baloon__text
+        = simple_format(@question.body)
+      = link_to new_question_answer_path(@question), class: 'question__baloon__answer' do
+        = fa_icon 'edit', text: '回答する'
+  = render @answers

@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title Qryption
+    == csrf_meta_tags
+
+    == stylesheet_link_tag    'application', media: 'all'
+    == javascript_include_tag 'application'
+
+  body
+    = render 'shared/header'
+    - if flash.present?
+      = render 'shared/flash_messages'
+    == yield
