@@ -1,0 +1,10 @@
+.answer-form.container-fluid
+  .answer-form__header
+    = link_to root_path, class: 'times-icon' do
+      = fa_icon 'times'
+    .answer-form__title 解答する
+  = simple_form_for [@question, @answer] do |f|
+    .form-inputs
+      = f.input :body, label: false, placeholder: '回答を入力してください', required: false, input_html: { class: 'answer-form__textarea' }
+    .form-actions
+      = f.button :submit, '送信', class: 'answer-form__submit-btn'
