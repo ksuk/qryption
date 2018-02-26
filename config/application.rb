@@ -19,6 +19,8 @@ module Qryption
     # -- all .rb files in that directory are automatically loaded.
     config.generators.system_tests = nil
 
+    config.autoload_paths << Rails.root.join('lib')
+
     config.generators do |g|
       g.stylesheets false
       g.javascripts false

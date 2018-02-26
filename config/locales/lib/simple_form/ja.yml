@@ -4,3 +4,6 @@ ja:
     "no": 'いいえ'
     required:
       html: '<span class="simple_form__required bg-danger text-white">必須</span>'
+
+    error_notification:
+      default_message: "エラーがありました。入力内容を確認してください"
