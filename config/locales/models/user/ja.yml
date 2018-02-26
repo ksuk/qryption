@@ -10,3 +10,6 @@ ja:
         profile: 紹介文
         website: ウェブサイト
         image: 写真
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        current_password: 現在のパスワード
