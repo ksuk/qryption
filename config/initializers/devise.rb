@@ -14,4 +14,8 @@ Devise.setup do |config|
 
   # omniauth
 	config.omniauth :twitter, ENV['TWITTER_API_KEY'], ENV['TWITTER_API_SECRET']
+
+  config.warden do |manager|
+    manager.failure_app = CustomAuthenticationFailure
+  end
 end

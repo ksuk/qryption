@@ -5,9 +5,12 @@
 @import "top";
 @import "devise/registration";
 @import "devise/session";
+@import "shared/error_messages";
+@import "shared/flash_messages";
 @import "shared/header";
 @import "questions/index";
 @import "questions/question";
 @import "questions/form";
 @import "users/show";
 @import "users/edit";
+@import "users/edit_password";

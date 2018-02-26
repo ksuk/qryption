@@ -15,6 +15,10 @@ img {
   object-fit: cover;
 }
 
+li {
+  list-style: none;
+}
+
 // bootstrapを上書き
 .help-block {
   color: #a94442;
@@ -28,6 +32,11 @@ img {
 }
 
 .form-control.string {
+    font-size: 1.5rem;
+    height: 6rem;
+}
+
+.form-control.password {
     font-size: 1.5rem;
     height: 6rem;
 }

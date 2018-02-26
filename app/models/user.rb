@@ -8,8 +8,17 @@ class User < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_many :answers, dependent: :destroy
 
-  validates :name, presence: true, on: :update
-  validates :email, presence: true, on: :update
+  with_options on: :update_info do |update|
+    update.validates :name, presence: true
+    update.validates :email, presence: true
+  end
+
+  with_options on: :update_password do |update_password|
+    update_password.validates :current_password, presence: true
+    update_password.validates :password, presence: true
+    update_password.validates :password_confirmation, presence: true
+  end
+
 
   def self.create_from_oauth(auth)
     user = User.new

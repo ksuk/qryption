@@ -1,20 +1,16 @@
 .header.container-fluid
   .left-content
     = link_to 'Qryption', root_path, class: 'header__logo'
-  - if user_signed_in?
-    - image = current_user.image.present? ? current_user.image.url : 'no-image-user.svg'
-    .right-content
-      = link_to '質問する！', new_question_path, class: 'header__new-question-btn'
+  .right-content
+    = link_to '質問する！', new_question_path, class: 'header__new-question-btn'
+    - if user_signed_in?
+      - image = current_user.image.present? ? current_user.image.url : 'no-image-user.svg'
       = image_tag image, class: 'header__icon dropdown-toggle', 'data-toggle': 'dropdown'
       .dropdown-menu.dropdown-menu-right
         = link_to 'マイページ', user_path(current_user), class: 'dropdown-item'
         .dropdown-divider
         = link_to 'プロフィール編集', edit_user_path(current_user), class: 'dropdown-item'
         .dropdown-divider
-        = link_to 'オプション', '', class: 'dropdown-item'
-        .dropdown-divider
-        = link_to 'パスワード設定', '', class: 'dropdown-item'
-        .dropdown-divider
-        = link_to 'ヘルプ', '', class: 'dropdown-item'
+        = link_to 'パスワード設定', edit_password_user_path(current_user), class: 'dropdown-item'
         .dropdown-divider
         = link_to 'ログアウト', destroy_user_session_path, class: 'dropdown-item', method: :delete
