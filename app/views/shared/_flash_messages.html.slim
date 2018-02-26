@@ -1,6 +1,8 @@
 .flash-messages
   - flash.each do |key, message|
     - case key
+    - when 'notice'
+      = content_tag(:div, message, class: 'alert alert-success')
     - when 'alert'
       = content_tag(:div, message, class: 'alert alert-warning')
     - else
