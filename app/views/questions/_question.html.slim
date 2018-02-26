@@ -1,6 +1,7 @@
 .question.row.no-gutters
   .question__user
-    = image_tag question.user.image.url, class: 'question__user__img'
+    - image = question.user.image.present? ? question.user.image.url : 'no-image-user.svg'
+    = image_tag image, class: 'question__user__img'
   .question__baloon
     = link_to question_path(question), class: 'question__baloon__text' do
       = simple_format(h(truncate(question.body, length: 200, omission: ' ...続きを読む')))
