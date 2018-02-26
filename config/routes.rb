@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
   resources :questions, only: [:new, :create, :show]
-  resources :answers, only: [:create]
+  resources :answers, only: [:new, :create]
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
   }, controllers: {
