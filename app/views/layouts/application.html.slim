@@ -9,3 +9,4 @@ html
 
   body
     == yield
+    = render 'shared/google_analytics' if Rails.env.production?
