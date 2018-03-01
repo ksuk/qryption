@@ -1,3 +1,14 @@
 .questions.container-fluid
   = render @questions
   = paginate @questions
+
+
+javascript:
+  if (document.getElementById('js-pagination')) {
+    var infScroll = new InfiniteScroll('.questions', {
+      path: '.page-next',
+      append: '.question',
+      hideNav: '.pagination',
+      status: '.scroller-status'
+    })
+  }

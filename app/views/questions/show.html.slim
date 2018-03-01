@@ -9,4 +9,17 @@
         = simple_format(@question.body)
       = link_to new_question_answer_path(@question), class: 'question__baloon__answer' do
         = fa_icon 'edit', text: '回答する'
-  = render @answers
+  .answers
+    = render @answers
+    = paginate @answers
+
+
+javascript:
+  if (document.getElementById('js-pagination')) {
+    var infScroll = new InfiniteScroll('.answers', {
+      path: '.page-next',
+      append: '.answer',
+      hideNav: '.pagination',
+      status: '.scroller-status'
+    })
+  }
