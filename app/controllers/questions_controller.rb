@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @answers = @question.answers.includes(:user)
+    @answers = @question.answers.includes(:user).page(params[:page]).order(created_at: :desc)
     rescue
       redirect_to root_path, warning: '申し訳ございません。お探しの質問は見つかりませんでした。'
   end
