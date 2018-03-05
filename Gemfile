@@ -53,6 +53,8 @@ group :development do
   gem 'binding_of_caller'
   gem 'html2slim'
   gem 'bullet'
+  gem 'ruby-debug-ide'
+  gem 'debase'
 end
 
 group :production do
