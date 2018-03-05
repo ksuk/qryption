@@ -88,6 +88,9 @@ GEM
       dry-validation (>= 0.10.4)
     crass (1.0.3)
     database_cleaner (1.6.2)
+    debase (0.2.2)
+      debase-ruby_core_source (>= 0.10.2)
+    debase-ruby_core_source (0.10.2)
     debug_inspector (0.0.3)
     deep_merge (1.1.1)
     devise (4.3.0)
@@ -287,6 +290,8 @@ GEM
       rspec-mocks (~> 3.7.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.0)
+    ruby-debug-ide (0.6.1)
+      rake (>= 0.8.1)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
     sass (3.5.3)
@@ -367,6 +372,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   config
   database_cleaner
+  debase
   devise
   dotenv-rails
   factory_bot_rails
@@ -388,6 +394,7 @@ DEPENDENCIES
   rails (~> 5.1.4)
   rails-controller-testing
   rspec-rails
+  ruby-debug-ide
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_form
